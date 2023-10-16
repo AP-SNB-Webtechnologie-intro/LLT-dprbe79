@@ -1,17 +1,81 @@
 /* Custum Style Sheet  */
 body {
-    background: grey;
+    background: white;
 }
 
 /* Navbar Decoration */
-.mynav {
+.navbar {
     background: white !important;
 
 }
 
 .navbar-brand img{
-    width: 100px;
+    width: 80px;
     height: auto;
-    margin-left: 50px;
-    margin-top: -5px;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.nav-item a {
+    margin-right: 20px !important;
+    color: #7CC4A3 !important;
+    border-bottom: 2px solid transparent;
+    }
+
+    /* Navbar over knop gaan geeft het onderstaande */
+.nav-item a:hover {
+        border-bottom: 2px solid #134B72;
+        color: #134B72 !important;
+        }
+
+    /* Navbar actieve pagina geeft het onderstaande */
+
+    .active a{
+        border-bottom: 2px solid #134B72 !important;
+        color: #134B72 !important;
+    }
+
+    /* Navbar zoek een andere kleur geven */
+.btn-outline-custom {
+        background-color: White; /* Aangepaste achtergrondkleur */
+        border-color: ; /* Aangepaste randkleur (indien nodig) */
+        color: #7CC4A3; /* Aangepaste tekstkleur */
+    }
+
+.btn-custom-i img{
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+body {
+    color: #134B72;
+}
+
+
+
+.drk:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: #000;
+    opacity: 0.5;
+}
+
+
+
+
+
+@media only screen and(max-whidth: 1140) {
+    .navbar-brand img{
+        width: 80px;
+        height: auto;
+        margin-left: 10px;
+        margin-top: -1px;
+    }
 }
