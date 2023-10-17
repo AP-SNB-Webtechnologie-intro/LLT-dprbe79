@@ -38,16 +38,16 @@ body {
     /* Navbar zoek een andere kleur geven */
 .btn-outline-custom {
         background-color: White; /* Aangepaste achtergrondkleur */
-        border-color: ; /* Aangepaste randkleur (indien nodig) */
+            /* border-color: ;  Aangepaste randkleur (indien nodig) */
         color: #7CC4A3; /* Aangepaste tekstkleur */
     }
 
-.btn-custom-i img{
-    width: 25px;
-    height: auto;
-    margin-left: 10px;
-    margin-top: -1px;
-}
+    .btn-custom-i img{
+        width: 5px;
+        height: auto;
+        margin-left: 5px;
+        margin-top: -1px;
+    }
 
 body {
     color: #134B72;
