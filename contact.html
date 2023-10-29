@@ -96,24 +96,22 @@
         <fieldset class="row g-3">
           <legend class="text-capitalize">gegevens</legend>
           <div class="col-12 col-md-6">
-            <label class="form-label text-capitalize" for="fromVoornaam">voornaam <span class="koffiebruin">
-                *</span></label>
+            <label class="form-label text-capitalize" for="fromVoornaam">voornaam *</label>
             <input class="form-control" type="text" name="voornaam" id="formVoornaam" required>
           </div>
           <div class="col-12 col-md-6">
-            <label class="form-label text-capitalize" for="fromAchternaam">achternaam <span class="koffiebruin">
-                *</span></label>
+            <label class="form-label text-capitalize" for="fromAchternaam">achternaam *</label>
             <input class="form-control" type="text" name="achternaam" id="formAchternaam" required>
           </div>
           <div class="col-12">
-            <label class="form-label" for="fromEmail">email<span class="koffiebruin"> *</span></label>
-            <input class="form-control" type="text" name="email" id="fromEmail" required>
+            <label class="form-label" for="fromEmail">email *</label>
+            <input class="form-control" type="email" name="email" id="fromEmail" required>
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <label class="form-label" for="fromMobiel">mobiel</label>
             <input class="form-control" type="tel" name="mobiel" id="formMobiel" placeholder="0032 / 475 12 34 56">
           </div>
-          <div class="col-12">
+          <div class="col-md-6">
             <label class="form-label" for="formContact">Ik wil contact opnemen met de dienst:</label>
             <select class="form-select" type="" name="Contact" id="formContact" required>
               <option value="Administratie">Administratie</option>
@@ -131,7 +129,7 @@
             <label class="form-label" for="bericht">Bericht:</label><br>
             <textarea class="form-control rounded" id="bericht" name="tekstveld" rows="4" cols="50"></textarea>
           </div>
-          <div class="col-12">
+          <div class="col-4">
             <button type="submit" class="btn border mb-4"
               data-nlok-ref-guid="afb82729-f4b0-4b35-b344-bb4083678737">Verzenden</button>
           </div>
