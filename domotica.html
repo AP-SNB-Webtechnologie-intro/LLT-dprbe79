@@ -14,6 +14,11 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"
     defer></script>
   <link rel="stylesheet" href="custom.css">
+  <!-- The latest stable Leaflet release -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </head>
 
@@ -29,14 +34,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="overzicht.html">Overzicht</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="overzicht.html" role="button" data-bs-toggle="dropdown"
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle active" href="overzicht.html" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Activiteiten</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="overzicht.html">Algemeen overzicht</a></li>
@@ -129,19 +134,31 @@
               functie van
               bepaalde parameters zoals licht, temperatuur, aanwezigheid, vocht of tijd.</li>
           </ul>
-
-          <figure>
-            <a href="https://www.niko.eu/nl-be" target="_blank">
-                        <img class="rounded mt-2" src="afbeeldingen\domotica.jpg" alt="Foto van een huis met domotica"
-              style="width: 270px; height: 150px">
-            </a>
-            <figcaption>&copy; Niko</figcaption>
-          </figure>
         </section>
+
+        <div class="row mt-4">
+          <div class=" col-12 col-md-6 text-center">
+            <section>
+              <figure>
+                <a href="https://www.niko.eu/nl-be" target="_blank">
+                  <img class="rounded mt-2" src="afbeeldingen\domotica.jpg" alt="Foto van een huis met domotica"
+                    style="width: 270px; height: 150px">
+                </a>
+                <figcaption>&copy; Niko</figcaption>
+              </figure>
+            </section>
+          </div>
+          <div class="col-12 col-md-6">
+            <section>
+              <div class="rounded mx-auto" id="map" style="width: 50%; height: 160px;"></div>
+            </section>
+          </div>
+        </div>
 
         <section>
           <h4 class="mt-4">Onze slimme domoticadiensten brengen gemak en efficiëntie naar uw huis of kantoor. </h4>
-          <h5 class="mt-4" style="list-style-position: inside; margin-left: 20px;">Onze Solar-diensten omvatten:</h5>
+          <h5 class="mt-4" style="list-style-position: inside; margin-left: 20px;">Onze Solar-diensten omvatten:
+          </h5>
           <ul class="mt-4" style="list-style-position: inside; margin-left: 20px;">
             <li>Integratie van slimme apparaten zoals verlichting, thermostaten en beveiligingssystemen.</li>
             <li>Aanpassing van uw domoticasysteem aan uw levensstijl.</li>
@@ -172,6 +189,19 @@
         </footer>
       </div>
     </Main>
+
+    <script>
+      var map = L.map('map').setView([51.14301, 4.16186], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var marker = L.marker([51.14301, 4.16186]).addTo(map) 
+        .bindPopup("Niko Showroom<br>Industriepark West 40<br> 9100 Sint-Niklaas, België")
+        .openPopup();
+    </script>
 </body>
 
 </html>
