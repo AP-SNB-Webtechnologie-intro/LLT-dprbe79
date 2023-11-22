@@ -42,18 +42,39 @@
     </footer>
 
     <script>
-        // JavaScript om afbeeldingen om de 2 seconden te wisselen
-        const images = ["sfeer1.jpg", "sfeer2.jpeg", "sfeer3.jpg"];
-        const imageElement = document.getElementById("sfeerImage");
-        let currentImageIndex = 0;
+ // Functie om het GET-verzoek uit te voeren
+ function getIpAddress() {
+        // Maak een XMLHttpRequest-object aan
+        var xhr = new XMLHttpRequest();
 
-        function changeImage() {
-            imageElement.src = "afbeeldingen/" + images[currentImageIndex];
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }
+        // Configureer het verzoek
+        xhr.open("GET", "https://api.ipify.org/?format=json", true);
 
-        setInterval(changeImage, 2000); // Wissel elke 2 seconden
+        // Voeg een eventlistener toe om het antwoord te verwerken
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Parseer het JSON-antwoord
+                var response = JSON.parse(xhr.responseText);
+
+                // Haal het IP-adres op en toon het op de pagina
+                var ipAddress = response.ip;
+                document.getElementById("ipAddress").innerHTML = "Jouw IP-adres is: " + ipAddress;
+            }
+        };
+
+        // Stuur het verzoek
+        xhr.send();
+    }
+
+    // Roep de functie aan bij het laden van de pagina
+    window.onload = function () {
+        getIpAddress();
+    };
     </script>
+
+    <!-- Element om het IP-adres weer te geven -->
+<p id="ipAddress">Het IP-adres wordt geladen...</p>
+
 </body>
 
 </html>

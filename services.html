@@ -14,6 +14,12 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"
     defer></script>
   <link rel="stylesheet" href="custom.css">
+  <!-- The latest stable Leaflet release -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 
 </head>
 
@@ -154,13 +160,129 @@
 
       </section>
 
+
+
+
+
+      <div class="row mt-4 text-center">
+        <div class="col-12 col-md-6">
+          <table style="width: 200%;" border="1">
+            <caption>Overzicht van de webtechnologielessen</caption>
+            <thead>
+              <tr>
+                <th>Lesnummer</th>
+                <th>Onderwerp</th>
+                <th>Docent</th>
+                <th>Datum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Inleiding tot Webtechnologie</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>20-09-2023</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>HTML-basis & inleiding Bootstrap</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>27-09-2023</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Docent ziek</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>04-10-2023</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Bootstrap & layout</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>11-10-2023</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Bootstrap & content</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>18-10-2023</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Bootstrap & formulieren</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>25-10-2023</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>API's & ThunderClient</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>15-11-2023</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>JS-bibliotheken & API naar front-end</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>22-11-2023</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Grote geïntegreerde opdracht</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>29-11-2023</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Grote geïntegreerde opdracht</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>04-12-2023</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>-------------</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>13-12-2023</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Presenteren langlopende taak</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>20-12-2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <section>
+          <div class="rounded mx-auto d-block " id="map" style="width: 80%; height: 300px;"></div>
+          <caption>Plaats van de webtechnologielessen</caption>
+        </section>
+      </div>
+
     </main>
-
-
-
     <footer>
       <div class="container text-muted text-center mt-3">&copy; 2023 db-solutions</div>
     </footer>
+
+    <script>
+      var map = L.map('map').setView([51.229982, 4.414529], 15); // Coördinaten voor "campus".
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      /*
+      L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=94oz578Z4vTAEtS7SUbj', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>', 
+    }).addTo(map);
+  */
+      var marker = L.marker([51.229982, 4.414529]).addTo(map) // Coördinaten voor "Coördinaten voor "campus".
+        .bindPopup("CAMPUS ELLEMANSTRAAT<br>Ellermanstraat 33<br>2060 Antwerpen, België")
+        .openPopup();
+    </script>
 
 </body>
 
