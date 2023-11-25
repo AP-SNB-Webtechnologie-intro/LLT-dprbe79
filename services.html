@@ -6,19 +6,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!-- Bootstrap CSS icons: https://icons.getbootstrap.com/#usage -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
   <!-- JavaScript: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"
-    defer></script>
-  <link rel="stylesheet" href="custom.css">
-  <!-- The latest stable Leaflet release -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <!-- .css eigen syle -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- LEAFLET -->
+  <!-- voeg het leaflet css-bestand toe om de kaart van standaard opmaak te voorzien -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+
+  <!-- voeg het mapStyle.css bestand toe. Hierin zetten we alle css specifiek voor de kaart -->
+  <link rel="stylesheet" href="css/mapstyle.css">
+
+
+  <!-- voeg de leaflet.js javascript toe aan de pagina en check de integriteit ervan -->
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- voeg het mapScript.js script toe aan de pagina en laad het als de pagina geladen is. -->
+  <script defer src="js/mapservices.js"></script>
 
 
 </head>
@@ -221,30 +239,36 @@
               </tr>
               <tr>
                 <td>8</td>
+                <td>Extra les docent</td>
+                <td>Mr. Van Battel Sam</td>
+                <td>17-11-2023</td>
+              </tr>
+              <tr>
+                <td>9</td>
                 <td>JS-bibliotheken & API naar front-end</td>
                 <td>Mr. Van Battel Sam</td>
                 <td>22-11-2023</td>
               </tr>
               <tr>
-                <td>9</td>
-                <td>Grote geïntegreerde opdracht</td>
+                <td>10</td>
+                <td>Docent afwezig</td>
                 <td>Mr. Van Battel Sam</td>
                 <td>29-11-2023</td>
               </tr>
               <tr>
-                <td>10</td>
-                <td>Grote geïntegreerde opdracht</td>
+                <td>11</td>
+                <td>Docent afwezig</td>
                 <td>Mr. Van Battel Sam</td>
                 <td>04-12-2023</td>
               </tr>
               <tr>
-                <td>11</td>
-                <td>-------------</td>
+                <td>12</td>
+                <td>Grote geïntegreerde opdracht</td>
                 <td>Mr. Van Battel Sam</td>
                 <td>13-12-2023</td>
               </tr>
               <tr>
-                <td>12</td>
+                <td>13</td>
                 <td>Presenteren langlopende taak</td>
                 <td>Mr. Van Battel Sam</td>
                 <td>20-12-2023</td>
@@ -256,7 +280,7 @@
 
       <div class="col-12 col-md-6">
         <section>
-          <div class="rounded mx-auto d-block " id="map" style="width: 80%; height: 300px;"></div>
+          <div class="rounded mx-auto d-block " id="apMap" style="width: 80%; height: 300px;"></div>
           <caption>Plaats van de webtechnologielessen</caption>
         </section>
       </div>
@@ -265,25 +289,6 @@
     <footer>
       <div class="container text-muted text-center mt-3">&copy; 2023 db-solutions</div>
     </footer>
-
-    <script>
-      var map = L.map('map').setView([51.229982, 4.414529], 15); // Coördinaten voor "campus".
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      /*
-      L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=94oz578Z4vTAEtS7SUbj', {
-      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>', 
-    }).addTo(map);
-  */
-      var marker = L.marker([51.229982, 4.414529]).addTo(map) // Coördinaten voor "Coördinaten voor "campus".
-        .bindPopup("CAMPUS ELLEMANSTRAAT<br>Ellermanstraat 33<br>2060 Antwerpen, België")
-        .openPopup();
-    </script>
-
 </body>
 
 </html>
